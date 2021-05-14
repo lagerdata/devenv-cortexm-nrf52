@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:20.04
 
 LABEL maintainer="akbar@lagerdata.com"
 
@@ -7,7 +7,7 @@ WORKDIR /app
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update  \
-&& apt-get install -y gnupg2 curl unzip bzip2 gdb-multiarch cmake ninja-build python3-pip gcc-arm-none-eabi ruby
+&& apt-get install -y curl unzip bzip2 gdb-multiarch cmake ninja-build python3-pip gcc-arm-none-eabi ruby
 
 ENV GNU_INSTALL_ROOT /usr/bin/
 ENV GNU_PREFIX arm-none-eabi
