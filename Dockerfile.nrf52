@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:21.04
 
 LABEL maintainer="akbar@lagerdata.com"
 
@@ -6,7 +6,7 @@ WORKDIR /app
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update \
+RUN apt-get install gpgv2 && apt-get update \
 && apt-get install -y curl unzip bzip2 gdb-multiarch cmake ninja-build python3-pip gcc-arm-none-eabi ruby
 
 ENV GNU_INSTALL_ROOT /usr/bin/
@@ -44,6 +44,3 @@ RUN gem install ceedling
 RUN pip3 install 'lager-cli==0.1.89'
 
 RUN pip3 install cpplint
-
-RUN apt-get remove -y curl unzip bzip2 build-essential \
-&& apt-get autoremove -y && apt-get clean -y
