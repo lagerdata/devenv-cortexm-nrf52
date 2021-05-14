@@ -6,8 +6,8 @@ WORKDIR /app
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install gnupg2 && apt-get update \
-&& apt-get install -y curl unzip bzip2 gdb-multiarch cmake ninja-build python3-pip gcc-arm-none-eabi ruby
+RUN apt-get update  \
+&& apt-get install -y gnupg2 curl unzip bzip2 gdb-multiarch cmake ninja-build python3-pip gcc-arm-none-eabi ruby
 
 ENV GNU_INSTALL_ROOT /usr/bin/
 ENV GNU_PREFIX arm-none-eabi
