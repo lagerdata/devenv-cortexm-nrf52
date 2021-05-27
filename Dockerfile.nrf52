@@ -7,7 +7,7 @@ WORKDIR /app
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update  \
-&& apt-get install -y curl unzip bzip2 \
+&& apt-get install -y unzip bzip2 \
 	cmake=3.16.3-1ubuntu1 \
 	ninja-build=1.10.0-1build1 \
 	python3-pip \
